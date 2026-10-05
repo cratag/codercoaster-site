@@ -61,7 +61,10 @@ p { margin: 0; }
   box-shadow: 0 1px 0 rgba(110,42,122,.1);
 }
 .brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
-.brand img { border-radius: 8px; background: #fff; }
+.brand img { transition: transform .25s ease; }
+.brand .wordmark { display: inline-block; transform-origin: left center; transition: transform .25s ease; }
+.brand:hover img, .brand:focus-visible img { transform: scale(1.05) rotate(-3deg); }
+.brand:hover .wordmark, .brand:focus-visible .wordmark { transform: scale(1.05); }
 .wordmark {
   font-family: "Pacifico", cursive;
   font-size: 1.5rem;
@@ -170,7 +173,6 @@ p { margin: 0; }
   display: flex; align-items: center; justify-content: center; gap: .9rem; flex-wrap: wrap;
   padding: 2rem 20px; font-size: .9rem; color: var(--muted);
 }
-.footer img { border-radius: 6px; }
 .footer a { color: var(--purple-600); text-decoration: none; font-weight: 500; }
 .footer a:hover { text-decoration: underline; }
 
@@ -191,6 +193,9 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .track-line { animation: none; stroke-dashoffset: 0; }
+  .brand img, .brand .wordmark { transition: none; }
+  .brand:hover img, .brand:focus-visible img,
+  .brand:hover .wordmark, .brand:focus-visible .wordmark { transform: none; }
 }
 
 @media (max-width: 640px) {
