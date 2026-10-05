@@ -1,0 +1,14 @@
+{
+  "name": "CoderCoaster — Software solutions",
+  "short_name": "CoderCoaster",
+  "description": "Software solutions studio: websites, SEO, CRMs, mobile apps and custom systems.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#a44aa8",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
