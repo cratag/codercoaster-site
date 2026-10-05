@@ -175,6 +175,11 @@ p { margin: 0; }
 }
 .footer a { color: var(--purple-600); text-decoration: none; font-weight: 500; }
 .footer a:hover { text-decoration: underline; }
+.social { display: flex; gap: .9rem; }
+.footer .social a { display: inline-flex; color: var(--muted); transition: color .2s ease; }
+.footer .social a:hover, .footer .social a:focus-visible { color: var(--purple-600); text-decoration: none; }
+.social svg { width: 18px; height: 18px; fill: currentColor; }
+.social svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---------- Scroll reveal ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
