@@ -8,6 +8,7 @@
   --muted: #6d5a75;
   --grad: linear-gradient(100deg, #a444a8 0%, #b57ab8 55%, #c4a4d0 100%);
   --radius: 20px;
+  --track-h: clamp(150px, 28svh, 260px);
   --shadow: 0 10px 30px -12px rgba(110, 42, 122, .35);
 }
 
@@ -84,7 +85,8 @@ p { margin: 0; }
   background: var(--grad);
   color: #fff;
   overflow: hidden;
-  padding: 7rem 0 6rem;
+  /* bottom padding reserves the track area so content never overlaps the curve */
+  padding: 7rem 0 calc(var(--track-h) + 2rem);
 }
 .hero-inner { position: relative; width: min(860px, 100% - 40px); text-align: center; z-index: 1; }
 .eyebrow {
@@ -101,14 +103,14 @@ p { margin: 0; }
 .lead { margin: 1.5rem auto 2.2rem; max-width: 600px; font-size: clamp(1.02rem, 2vw, 1.2rem); opacity: .95; }
 .cta-row { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
 
-.track { position: absolute; inset: auto 0 0 0; width: 100%; height: 32%; opacity: .55; }
+.track { position: absolute; inset: auto 0 0 0; width: 100%; height: var(--track-h); opacity: .55; }
 .track-line {
   fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round;
   stroke-dasharray: 2400; stroke-dashoffset: 2400;
   animation: draw 3.2s .3s ease-out forwards;
 }
 .track-line-2 { stroke-width: 2; opacity: .6; animation-delay: .6s; }
-.rider { position: absolute; inset: auto 0 0 0; height: 32%; pointer-events: none; z-index: 1; }
+.rider { position: absolute; inset: auto 0 0 0; height: var(--track-h); pointer-events: none; z-index: 1; }
 .cart { position: absolute; left: 0; top: 0; will-change: transform; filter: drop-shadow(0 4px 6px rgba(70,20,80,.35)); }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 
@@ -192,5 +194,7 @@ p { margin: 0; }
 }
 
 @media (max-width: 640px) {
-  .track, .rider { height: 20%; }
+  :root { --track-h: clamp(110px, 20svh, 170px); }
+  .hero .cta-row { flex-direction: column; align-items: center; }
+  .hero .cta-row .btn { width: min(100%, 18rem); text-align: center; justify-content: center; }
 }
