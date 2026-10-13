@@ -105,12 +105,17 @@ p { margin: 0; }
 }
 .hero h1 .script {
   display: inline-block;
-  text-shadow: 0 3px 0 rgba(110,42,122,.45), 0 0 14px rgba(255,255,255,.55), 0 0 32px rgba(255,220,255,.35);
+  /* Soft glow at rest; it only lights up on hover */
+  text-shadow: 0 3px 0 rgba(110,42,122,.45), 0 0 10px rgba(255,255,255,.25), 0 0 24px rgba(255,220,255,.15);
+  transition: text-shadow .4s ease;
   /* Two independent sine-like waves (alternate + ease-in-out) with different
      periods: only turns around at the extremes, so there's no visible restart */
   animation:
     ride-bob 1.2s ease-in-out -0.6s infinite alternate,
     ride-tilt 1.9s ease-in-out -0.95s infinite alternate;
+}
+.hero h1 .script:hover {
+  text-shadow: 0 3px 0 rgba(110,42,122,.45), 0 0 16px rgba(255,255,255,.7), 0 0 40px rgba(255,220,255,.5);
 }
 @keyframes ride-bob {
   from { translate: 0 -4px; }
@@ -281,14 +286,18 @@ p { margin: 0; }
 }
 .steps h3 { margin: 1rem 0 .4rem; font-size: 1.25rem; }
 .steps p { color: var(--muted); }
-/* Stacked: numbers on the left so the vertical track never crosses the text */
+/* Stacked: numbers on the left of each step, and no train — a vertical ride
+   would only nose-dive down the page */
 @media (max-width: 759px) {
   .steps { grid-template-columns: 1fr; }
   .steps li { padding-left: 68px; }
   .num { position: absolute; left: 0; top: 1rem; }
   .steps h3 { margin-top: .7rem; }
+  .steps-track, .steps-cart { display: none; }
 }
-.num.hit { transform: scale(1.12); box-shadow: 0 0 0 7px rgba(164,74,168,.14), var(--shadow); }
+@media (min-width: 760px) {
+  .num.hit { transform: scale(1.12); box-shadow: 0 0 0 7px rgba(164,74,168,.14), var(--shadow); }
+}
 .steps-track {
   position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none;
   fill: none; stroke-linecap: round; opacity: 0; transition: opacity .8s .3s;
