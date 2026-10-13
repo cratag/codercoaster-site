@@ -29,23 +29,23 @@ document.querySelector('.brand').addEventListener('click', (e) => {
   history.replaceState(null, '', location.pathname + location.search);
 });
 
-// Roller coaster train (3 cars) rides the hero track as you scroll
+// Roller coaster train (3 cars) rides the hero track on a loop; scrolling speeds it up
 (() => {
   const path = document.getElementById('trackMain');
   const rider = document.querySelector('.rider');
-  const first = rider && rider.querySelector('.cart');
-  const hero = document.querySelector('.hero');
-  if (!path || !first) return;
+  const nose = rider && rider.querySelector('.cart-lead');
+  const car = rider && rider.querySelector('.cart:not(.cart-lead)');
+  if (!path || !nose || !car) return;
   const CARS = 3, SAMPLES = 400;
-  const VB_W = 1440, VB_H = 320, CW = 84, WHEEL_BOTTOM = 39;
-  const total = path.getTotalLength();
-  const carts = [first];
-  for (let i = 1; i < CARS; i++) {
-    const c = first.cloneNode(true);
+  const VB_W = 1440, VB_H = 320, CW = 84, BODY_BOTTOM = 28;
+  // Bullet-train nose up front, plain cars behind it
+  const carts = [nose, car];
+  for (let i = 2; i < CARS; i++) {
+    const c = car.cloneNode(true);
     rider.appendChild(c);
     carts.push(c);
   }
-  carts.forEach((c) => { c.style.transformOrigin = `${CW / 2}px ${WHEEL_BOTTOM}px`; });
+  carts.forEach((c) => { c.style.transformOrigin = `${CW / 2}px ${BODY_BOTTOM}px`; });
 
   // Sample the track in real pixels so spacing is measured along the curve
   let pts = [], cum = [], w = 0, h = 0;
@@ -58,6 +58,18 @@ document.querySelector('.brand').addEventListener('click', (e) => {
       if (k) cum.push(cum[k - 1] + Math.hypot(pts[k].x - pts[k - 1].x, pts[k].y - pts[k - 1].y));
     }
   };
+  // Phones get a gentler final climb (data-mobile); swap the shape when crossing the breakpoint
+  const lines = document.querySelectorAll('.track-line');
+  lines.forEach((l) => { l.dataset.desktop = l.getAttribute('d'); });
+  const narrow = matchMedia('(max-width: 640px)');
+  let total = 0;
+  const applyShape = () => {
+    lines.forEach((l) => l.setAttribute('d', narrow.matches ? l.dataset.mobile : l.dataset.desktop));
+    total = path.getTotalLength();
+    measure();
+  };
+  narrow.addEventListener('change', applyShape);
+
   // Point at distance s (px) along the track; extends in a straight line past the ends
   const at = (s) => {
     const L = cum[SAMPLES];
@@ -69,23 +81,43 @@ document.querySelector('.brand').addEventListener('click', (e) => {
     return { x: pts[lo].x + (pts[hi].x - pts[lo].x) * f, y: pts[lo].y + (pts[hi].y - pts[lo].y) * f };
   };
 
-  const update = () => {
-    if (rider.clientWidth !== w || rider.clientHeight !== h) measure();
-    const scale = Math.min(Math.max(w / 1000, 0.5), 1);
-    const spacing = CW * scale * 1.1;
-    const L = cum[SAMPLES];
-    const p = Math.min(Math.max(window.scrollY / (hero.offsetHeight * 0.85), 0), 1);
-    const lead = p * (L + (CARS - 1) * spacing);
+  // Constant slow ride that loops; scrolling gives it a boost that eases off
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const baseSpeed = () => (REDUCED ? 0 : narrow.matches ? 200 : 275); // px/s
+  const MAX_BOOST = 1690;
+  let lead = 0, boost = 0, lastY = window.scrollY, lastT = 0, scale = 1, spacing = 0;
+
+  const draw = () => {
     carts.forEach((cart, i) => {
       const s = lead - i * spacing;
       const a = at(s), b = at(s + 4), z = at(s - 4);
       const angle = Math.atan2(b.y - z.y, b.x - z.x) * 180 / Math.PI;
       cart.style.transform =
-        `translate(${a.x - CW / 2}px, ${a.y - WHEEL_BOTTOM}px) rotate(${angle}deg) scale(${scale})`;
+        `translate(${a.x - CW / 2}px, ${a.y - BODY_BOTTOM}px) rotate(${angle}deg) scale(${scale})`;
     });
   };
-  measure();
-  update();
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
+
+  const frame = (t) => {
+    const dt = lastT ? Math.min((t - lastT) / 1000, 0.1) : 0;
+    lastT = t;
+    if (rider.clientWidth !== w || rider.clientHeight !== h) measure();
+    scale = Math.min(Math.max(w / 1000, 0.5), 1);
+    spacing = CW * scale * 1.1;
+    const lap = cum[SAMPLES] + CARS * spacing + CW * scale;
+    lead = (lead + (baseSpeed() + boost) * dt) % lap;
+    boost *= Math.exp(-2.5 * dt);
+    draw();
+    requestAnimationFrame(frame);
+  };
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    // Narrow screens have a shorter track and longer scrolls, so tone the boost down
+    const k = Math.min(w / 1000, 1);
+    boost = Math.min(boost + Math.abs(y - lastY) * 7.5 * k, MAX_BOOST * k);
+    lastY = y;
+  }, { passive: true });
+
+  applyShape();
+  requestAnimationFrame(frame);
 })();
