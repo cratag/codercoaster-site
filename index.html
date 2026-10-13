@@ -140,7 +140,7 @@
     <section class="section" id="services">
       <div class="container">
         <p class="eyebrow dark reveal">What we do</p>
-        <h2 class="reveal d1">Everything you need to ship and grow.</h2>
+        <h2 data-track class="reveal d1">Everything you need to ship and grow.</h2>
 
         <div class="grid">
           <article class="card reveal">
@@ -181,27 +181,28 @@
     <section class="section alt" id="ai">
       <div class="container">
         <p class="eyebrow dark reveal">AI Agents</p>
-        <h2 class="reveal d1">AI that never misses a customer.</h2>
+        <h2 data-track class="reveal d1">AI that never misses a customer.</h2>
         <p class="section-intro reveal d2">Our AI agents answer, reply and book for you 24/7 — so no call, message or lead slips through the cracks.</p>
+        <p class="status reveal d3"><span class="pulse" aria-hidden="true"></span>Online 24/7</p>
 
         <div class="grid grid-4">
           <article class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 12.5h5"/></svg></div>
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path class="sms-lines" d="M8 9h8M8 12.5h5"/></svg></div>
             <h3>Missed calls &amp; SMS</h3>
             <p>Every missed call gets an instant text back. Our agent replies to SMS, answers questions and captures the lead.</p>
           </article>
           <article class="card reveal d1">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
+            <div class="icon ring"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
             <h3>AI voice receptionist</h3>
             <p>Answers your phone live, handles common questions and routes calls to the right person.</p>
           </article>
           <article class="card reveal d2">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01"/></svg></div>
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path class="dot" d="M8.5 10.5h.01"/><path class="dot" d="M12 10.5h.01"/><path class="dot" d="M15.5 10.5h.01"/></svg></div>
             <h3>24/7 website chat</h3>
             <p>A chat assistant on your site that answers, qualifies and converts visitors around the clock.</p>
           </article>
           <article class="card reveal d3">
-            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></div>
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path class="check" d="M9 15l2 2 4-4"/></svg></div>
             <h3>Appointment booking</h3>
             <p>Books, reschedules and confirms appointments straight into your calendar.</p>
           </article>
@@ -214,11 +215,22 @@
       <div class="container">
         <p class="eyebrow dark reveal">How we work</p>
         <h2 class="reveal d1">A smooth ride, start to finish.</h2>
-        <ol class="steps">
-          <li class="reveal"><span class="num">1</span><h3>Talk</h3><p>We listen, ask the right questions and agree on goals and scope.</p></li>
-          <li class="reveal d1"><span class="num">2</span><h3>Build</h3><p>Short iterations with visible progress, so there are no surprises.</p></li>
-          <li class="reveal d2"><span class="num">3</span><h3>Launch &amp; grow</h3><p>We ship, measure and keep improving as your needs evolve.</p></li>
-        </ol>
+        <div class="steps-wrap">
+          <svg class="steps-track" aria-hidden="true"><path class="st-base"/><path class="st-fill"/></svg>
+          <svg class="steps-cart" width="84" height="44" viewBox="0 0 84 44" aria-hidden="true">
+            <defs><clipPath id="stepNoseClip"><path d="M6 10 Q6 4 12 4 H34 C52 4 66 10 74 16 C79 19.5 80.5 23 78 26 H6 Z"/></clipPath></defs>
+            <path d="M6 10 Q6 4 12 4 H34 C52 4 66 10 74 16 C79 19.5 80.5 23 78 26 H6 Z" fill="#a44aa8"/>
+            <rect x="14" y="9" width="14" height="9" rx="3" fill="#f6f0f9"/>
+            <rect x="33" y="9" width="11" height="9" rx="3" fill="#f6f0f9"/>
+            <path d="M50 8 Q50 6.5 52 6.6 C58 7.4 63.5 9.8 67.5 13 Q68.5 14 67 14 H52 Q50 14 50 12 Z" fill="#f6f0f9"/>
+            <rect x="6" y="19" width="76" height="7" fill="#6e2a7a" clip-path="url(#stepNoseClip)"/>
+          </svg>
+          <ol class="steps">
+            <li class="reveal"><span class="num">1</span><h3>Talk</h3><p>We listen, ask the right questions and agree on goals and scope.</p></li>
+            <li class="reveal d1"><span class="num">2</span><h3>Build</h3><p>Short iterations with visible progress, so there are no surprises.</p></li>
+            <li class="reveal d2"><span class="num">3</span><h3>Launch &amp; grow</h3><p>We ship, measure and keep improving as your needs evolve.</p></li>
+          </ol>
+        </div>
       </div>
     </section>
 
