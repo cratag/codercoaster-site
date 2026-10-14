@@ -1,0 +1,116 @@
+{
+  "langName": "Español",
+  "meta": {
+    "title": "CoderCoaster — Soluciones de software: sitios web, SEO, CRMs, apps móviles y agentes de IA",
+    "description": "CoderCoaster es un estudio de soluciones de software. Diseñamos y desarrollamos sitios web, mejoras de SEO, CRMs, apps móviles, agentes de IA y sistemas a medida, de principio a fin.",
+    "keywords": "CoderCoaster, soluciones de software, desarrollo web, SEO, CRM, apps móviles, agentes de IA, recepcionista con IA, respuesta a llamadas perdidas, software a medida",
+    "shareTitle": "CoderCoaster — Soluciones de software que te llevan lejos",
+    "shareDescription": "Sitios web, SEO, CRMs, apps móviles, agentes de IA y sistemas a medida — diseñados y desarrollados de principio a fin."
+  },
+  "schema": {
+    "orgDescription": "CoderCoaster es un estudio de soluciones de software que desarrolla sitios web, mejoras de SEO, CRMs, apps móviles, agentes de IA y sistemas a medida.",
+    "serviceDescription": "Soluciones de software: sitios web, SEO, CRMs, apps móviles, agentes de IA y sistemas a medida.",
+    "services": {
+      "web": "Desarrollo web",
+      "seo": "Mejoras de SEO",
+      "crm": "Desarrollo de CRM",
+      "mobile": "Apps móviles",
+      "ai": "Agentes de IA",
+      "systems": "Sistemas a medida"
+    }
+  },
+  "contact": {
+    "subject": "Consulta%20de%20proyecto",
+    "cta": "Contáctanos"
+  },
+  "nav": {
+    "home": "Inicio de CoderCoaster",
+    "services": "Servicios",
+    "ai": "Agentes de IA",
+    "process": "Proceso"
+  },
+  "hero": {
+    "eyebrow": "Soluciones de software",
+    "title": "Creamos el software<br>que <span class=\"script\">mueve</span> tu negocio.",
+    "lead": "Sitios web, SEO, CRMs, apps móviles, agentes de IA y sistemas a medida — diseñados y desarrollados de principio a fin por un equipo pequeño que cuida cada tramo del viaje.",
+    "secondary": "Mira lo que hacemos"
+  },
+  "services": {
+    "eyebrow": "Qué hacemos",
+    "title": "Todo lo que necesitas para lanzar y crecer.",
+    "web": {
+      "title": "Web",
+      "body": "Sitios y aplicaciones web rápidos, accesibles y atractivos — desde landing pages hasta plataformas completas."
+    },
+    "seo": {
+      "title": "Mejoras de SEO",
+      "body": "Auditorías técnicas, rendimiento y estructura de contenido para que te encuentren las personas indicadas."
+    },
+    "crm": {
+      "title": "CRMs",
+      "body": "CRMs a medida o integrados que se adaptan a cómo tu equipo realmente vende, atiende y da seguimiento."
+    },
+    "mobile": {
+      "title": "Apps móviles",
+      "body": "Apps pulidas para iOS y Android, nativas o multiplataforma, hechas para usarse todos los días."
+    },
+    "systems": {
+      "title": "Sistemas",
+      "body": "Herramientas internas, integraciones y sistemas de back-office que automatizan lo tedioso."
+    },
+    "cta": {
+      "title": "¿Tienes algo en mente?",
+      "body": "Cuéntanos — respondemos rápido."
+    }
+  },
+  "ai": {
+    "eyebrow": "Agentes de IA",
+    "title": "IA que nunca pierde un cliente.",
+    "intro": "Nuestros agentes de IA atienden, responden y agendan por ti 24/7 — para que ninguna llamada, mensaje o cliente potencial se escape.",
+    "status": "En línea 24/7",
+    "sms": {
+      "title": "Llamadas perdidas y SMS",
+      "body": "Cada llamada perdida recibe un mensaje de texto al instante. Nuestro agente responde SMS, contesta preguntas y captura al cliente potencial."
+    },
+    "voice": {
+      "title": "Recepcionista de voz con IA",
+      "body": "Atiende tu teléfono en vivo, resuelve las preguntas frecuentes y deriva las llamadas a la persona indicada."
+    },
+    "chat": {
+      "title": "Chat web 24/7",
+      "body": "Un asistente de chat en tu sitio que responde, califica y convierte visitantes a toda hora."
+    },
+    "booking": {
+      "title": "Agenda de citas",
+      "body": "Agenda, reprograma y confirma citas directamente en tu calendario."
+    }
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Un viaje sin sobresaltos, de principio a fin.",
+    "talk": {
+      "title": "Conversamos",
+      "body": "Escuchamos, hacemos las preguntas correctas y acordamos objetivos y alcance."
+    },
+    "build": {
+      "title": "Construimos",
+      "body": "Iteraciones cortas con avances visibles, para que no haya sorpresas."
+    },
+    "launch": {
+      "title": "Lanzamos y crecemos",
+      "body": "Publicamos, medimos y seguimos mejorando a medida que evolucionan tus necesidades."
+    }
+  },
+  "final": {
+    "title": "¿Listo para subirte?",
+    "body": "Cuéntanos qué necesitas y te respondemos en menos de un día hábil.",
+    "call": "o llámanos al"
+  },
+  "footer": {
+    "linkedin": "CoderCoaster en LinkedIn",
+    "x": "CoderCoaster en X",
+    "instagram": "CoderCoaster en Instagram",
+    "email": "Escríbenos a us@codercoaster.com",
+    "call": "Llamar al (628) 600-0690"
+  }
+}

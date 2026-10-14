@@ -79,6 +79,11 @@ p { margin: 0; }
 }
 .nav.scrolled nav a:not(.btn) { color: var(--ink); }
 .nav:not(.scrolled) .btn-small { background: #fff; color: var(--purple-700); }
+.nav nav a.lang {
+  font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+  padding: .25rem .55rem; border: 1px solid currentColor; border-radius: 999px; opacity: .85;
+}
+.nav nav a.lang:hover, .nav nav a.lang:focus-visible { opacity: 1; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -324,6 +329,9 @@ p { margin: 0; }
 }
 .final h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 600; }
 .final p { margin: 1rem auto 2rem; max-width: 760px; opacity: .95; }
+.final .final-call { margin: 1.6rem auto 0; font-size: 1.05rem; opacity: .9; }
+.final-call a { color: #fff; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(255,255,255,.45); text-underline-offset: 3px; transition: text-decoration-color .2s ease; }
+.final-call a:hover, .final-call a:focus-visible { text-decoration-color: #fff; }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -369,8 +377,11 @@ p { margin: 0; }
 .paused *, .paused *::before, .paused *::after { animation-play-state: paused !important; }
 
 @media (max-width: 560px) {
-  .nav nav a:not(.btn) { display: none; }
-  .wordmark { font-size: 1.3rem; }
+  .nav nav a:not(.btn):not(.lang) { display: none; }
+  .nav nav { gap: .5rem; }
+  .nav .btn-small { padding: .45rem .9rem; font-size: .85rem; }
+  .brand { gap: .45rem; }
+  .wordmark { font-size: 1.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

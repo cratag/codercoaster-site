@@ -1,0 +1,116 @@
+{
+  "langName": "English",
+  "meta": {
+    "title": "CoderCoaster — Software solutions: websites, SEO, CRMs, mobile apps &amp; AI agents",
+    "description": "CoderCoaster is a software solutions studio. We design and build websites, SEO improvements, CRMs, mobile apps, AI agents and custom systems, end to end.",
+    "keywords": "CoderCoaster, software solutions, web development, SEO, CRM, mobile apps, AI agents, AI receptionist, missed call text back, custom software",
+    "shareTitle": "CoderCoaster — Software solutions that take you places",
+    "shareDescription": "Websites, SEO, CRMs, mobile apps, AI agents and custom systems — designed and engineered end to end."
+  },
+  "schema": {
+    "orgDescription": "CoderCoaster is a software solutions studio building websites, SEO improvements, CRMs, mobile apps, AI agents and custom systems.",
+    "serviceDescription": "Software solutions: websites, SEO, CRMs, mobile apps, AI agents and custom systems.",
+    "services": {
+      "web": "Web development",
+      "seo": "SEO improvements",
+      "crm": "CRM development",
+      "mobile": "Mobile apps",
+      "ai": "AI agents",
+      "systems": "Custom systems"
+    }
+  },
+  "contact": {
+    "subject": "Project%20inquiry",
+    "cta": "Contact us"
+  },
+  "nav": {
+    "home": "CoderCoaster home",
+    "services": "Services",
+    "ai": "AI Agents",
+    "process": "Process"
+  },
+  "hero": {
+    "eyebrow": "Software solutions",
+    "title": "We build the software<br>that <span class=\"script\">moves</span> your business.",
+    "lead": "Websites, SEO, CRMs, mobile apps, AI agents and custom systems — designed and engineered end to end by a small team that cares about the ride.",
+    "secondary": "See what we do"
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Everything you need to ship and grow.",
+    "web": {
+      "title": "Web",
+      "body": "Fast, accessible, beautiful websites and web apps — from landing pages to full platforms."
+    },
+    "seo": {
+      "title": "SEO improvements",
+      "body": "Technical audits, performance and content structure that get you found by the right people."
+    },
+    "crm": {
+      "title": "CRMs",
+      "body": "Custom or integrated CRMs that fit how your team really sells, supports and follows up."
+    },
+    "mobile": {
+      "title": "Mobile apps",
+      "body": "Polished iOS and Android apps, native or cross-platform, built to be used every day."
+    },
+    "systems": {
+      "title": "Systems",
+      "body": "Internal tools, integrations and back-office systems that automate the boring parts."
+    },
+    "cta": {
+      "title": "Have something in mind?",
+      "body": "Tell us about it — we reply fast."
+    }
+  },
+  "ai": {
+    "eyebrow": "AI Agents",
+    "title": "AI that never misses a customer.",
+    "intro": "Our AI agents answer, reply and book for you 24/7 — so no call, message or lead slips through the cracks.",
+    "status": "Online 24/7",
+    "sms": {
+      "title": "Missed calls &amp; SMS",
+      "body": "Every missed call gets an instant text back. Our agent replies to SMS, answers questions and captures the lead."
+    },
+    "voice": {
+      "title": "AI voice receptionist",
+      "body": "Answers your phone live, handles common questions and routes calls to the right person."
+    },
+    "chat": {
+      "title": "24/7 website chat",
+      "body": "A chat assistant on your site that answers, qualifies and converts visitors around the clock."
+    },
+    "booking": {
+      "title": "Appointment booking",
+      "body": "Books, reschedules and confirms appointments straight into your calendar."
+    }
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A smooth ride, start to finish.",
+    "talk": {
+      "title": "Talk",
+      "body": "We listen, ask the right questions and agree on goals and scope."
+    },
+    "build": {
+      "title": "Build",
+      "body": "Short iterations with visible progress, so there are no surprises."
+    },
+    "launch": {
+      "title": "Launch &amp; grow",
+      "body": "We ship, measure and keep improving as your needs evolve."
+    }
+  },
+  "final": {
+    "title": "Ready to get on board?",
+    "body": "Tell us what you need and we'll get back to you within one business day.",
+    "call": "or call us at"
+  },
+  "footer": {
+    "linkedin": "CoderCoaster on LinkedIn",
+    "x": "CoderCoaster on X",
+    "instagram": "CoderCoaster on Instagram",
+    "email": "Email us@codercoaster.com",
+    "call": "Call (628) 600-0690"
+  }
+}

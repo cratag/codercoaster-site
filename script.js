@@ -81,6 +81,11 @@ window.addEventListener('scroll', onScroll, { passive: true });
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Language switch: remember the choice so the browser-language redirect respects it
+document.querySelectorAll('.lang').forEach((a) => a.addEventListener('click', () => {
+  try { localStorage.setItem('lang', a.dataset.lang); } catch (e) {}
+}));
+
 // Logo goes back to the very top
 document.querySelector('.brand').addEventListener('click', (e) => {
   e.preventDefault();

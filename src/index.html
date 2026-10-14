@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoderCoaster — Software solutions: websites, SEO, CRMs, mobile apps &amp; AI agents</title>
-  <meta name="description" content="CoderCoaster is a software solutions studio. We design and build websites, SEO improvements, CRMs, mobile apps, AI agents and custom systems, end to end.">
-  <meta name="keywords" content="CoderCoaster, software solutions, web development, SEO, CRM, mobile apps, AI agents, AI receptionist, missed call text back, custom software">
+  <title>{{meta.title}}</title>
+  <meta name="description" content="{{meta.description}}">
+  <meta name="keywords" content="{{meta.keywords}}">
   <meta name="author" content="CoderCoaster">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#a44aa8">
-  <link rel="canonical" href="https://codercoaster.com/">
+  {{redirect}}
+  <link rel="canonical" href="{{url}}">
+  <link rel="alternate" hreflang="en" href="https://codercoaster.com/">
+  <link rel="alternate" hreflang="es" href="https://codercoaster.com/es/">
+  <link rel="alternate" hreflang="x-default" href="https://codercoaster.com/">
 
   <!-- Icons / web app -->
-  <link rel="icon" type="image/png" href="assets/badge.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="/assets/badge.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
   <meta name="application-name" content="CoderCoaster">
   <meta name="apple-mobile-web-app-title" content="CoderCoaster">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,17 +27,18 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CoderCoaster">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://codercoaster.com/">
-  <meta property="og:title" content="CoderCoaster — Software solutions that take you places">
-  <meta property="og:description" content="Websites, SEO, CRMs, mobile apps, AI agents and custom systems — designed and engineered end to end.">
+  <meta property="og:locale" content="{{ogLocale}}">
+  <meta property="og:locale:alternate" content="{{alt.ogLocale}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:title" content="{{meta.shareTitle}}">
+  <meta property="og:description" content="{{meta.shareDescription}}">
   <meta property="og:image" content="https://codercoaster.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="CoderCoaster — Software solutions that take you places">
+  <meta property="og:image:alt" content="{{meta.shareTitle}}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CoderCoaster — Software solutions that take you places">
-  <meta name="twitter:description" content="Websites, SEO, CRMs, mobile apps, AI agents and custom systems — designed and engineered end to end.">
+  <meta name="twitter:title" content="{{meta.shareTitle}}">
+  <meta name="twitter:description" content="{{meta.shareDescription}}">
   <meta name="twitter:image" content="https://codercoaster.com/assets/og-image.png">
 
   <!-- Structured data -->
@@ -48,7 +53,8 @@
         "url": "https://codercoaster.com/",
         "logo": "https://codercoaster.com/assets/icon-512.png",
         "email": "us@codercoaster.com",
-        "description": "CoderCoaster is a software solutions studio building websites, SEO improvements, CRMs, mobile apps, AI agents and custom systems."
+        "telephone": "+1-628-600-0690",
+        "description": "{{schema.orgDescription}}"
       },
       {
         "@type": "WebSite",
@@ -56,22 +62,22 @@
         "url": "https://codercoaster.com/",
         "name": "CoderCoaster",
         "publisher": { "@id": "https://codercoaster.com/#org" },
-        "inLanguage": "en"
+        "inLanguage": "{{lang}}"
       },
       {
         "@type": "ProfessionalService",
         "name": "CoderCoaster",
         "url": "https://codercoaster.com/",
         "image": "https://codercoaster.com/assets/icon-512.png",
-        "description": "Software solutions: websites, SEO, CRMs, mobile apps, AI agents and custom systems.",
+        "description": "{{schema.serviceDescription}}",
         "parentOrganization": { "@id": "https://codercoaster.com/#org" },
         "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web development" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO improvements" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CRM development" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile apps" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI agents" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom systems" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{schema.services.web}}" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{schema.services.seo}}" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{schema.services.crm}}" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{schema.services.mobile}}" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{schema.services.ai}}" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{schema.services.systems}}" } }
         ]
       }
     ]
@@ -81,20 +87,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
   <header class="nav" id="nav">
-    <a class="brand" href="#top" aria-label="CoderCoaster home">
-      <img src="assets/badge.png" alt="" width="40" height="40">
+    <a class="brand" href="#top" aria-label="{{nav.home}}">
+      <img src="/assets/badge.png" alt="" width="40" height="40">
       <span class="wordmark">CoderCoaster</span>
     </a>
     <nav>
-      <a href="#services">Services</a>
-      <a href="#ai">AI Agents</a>
-      <a href="#process">Process</a>
-      <a class="btn btn-small" href="mailto:us@codercoaster.com?subject=Project%20inquiry">Contact us</a>
+      <a href="#services">{{nav.services}}</a>
+      <a href="#ai">{{nav.ai}}</a>
+      <a href="#process">{{nav.process}}</a>
+      <a class="lang" href="{{alt.path}}" hreflang="{{alt.lang}}" lang="{{alt.lang}}" data-lang="{{alt.lang}}" aria-label="{{alt.langName}}">{{alt.lang}}</a>
+      <a class="btn btn-small" href="mailto:us@codercoaster.com?subject={{contact.subject}}">{{contact.cta}}</a>
     </nav>
   </header>
 
@@ -126,12 +133,12 @@
         </svg>
       </div>
       <div class="hero-inner">
-        <p class="eyebrow reveal">Software solutions</p>
-        <h1 class="reveal d1">We build the software<br>that <span class="script">moves</span> your business.</h1>
-        <p class="lead reveal d2">Websites, SEO, CRMs, mobile apps, AI agents and custom systems — designed and engineered end to end by a small team that cares about the ride.</p>
+        <p class="eyebrow reveal">{{hero.eyebrow}}</p>
+        <h1 class="reveal d1">{{hero.title}}</h1>
+        <p class="lead reveal d2">{{hero.lead}}</p>
         <div class="cta-row reveal d3">
-          <a class="btn btn-light" href="mailto:us@codercoaster.com?subject=Project%20inquiry">Contact us</a>
-          <a class="btn btn-ghost" href="#services">See what we do</a>
+          <a class="btn btn-light" href="mailto:us@codercoaster.com?subject={{contact.subject}}">{{contact.cta}}</a>
+          <a class="btn btn-ghost" href="#services">{{hero.secondary}}</a>
         </div>
       </div>
     </section>
@@ -139,39 +146,39 @@
     <!-- SERVICES -->
     <section class="section" id="services">
       <div class="container">
-        <p class="eyebrow dark reveal">What we do</p>
-        <h2 data-track class="reveal d1">Everything you need to ship and grow.</h2>
+        <p class="eyebrow dark reveal">{{services.eyebrow}}</p>
+        <h2 data-track class="reveal d1">{{services.title}}</h2>
 
         <div class="grid">
           <article class="card reveal">
             <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></div>
-            <h3>Web</h3>
-            <p>Fast, accessible, beautiful websites and web apps — from landing pages to full platforms.</p>
+            <h3>{{services.web.title}}</h3>
+            <p>{{services.web.body}}</p>
           </article>
           <article class="card reveal d1">
             <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 12l2 2 3-4"/></svg></div>
-            <h3>SEO improvements</h3>
-            <p>Technical audits, performance and content structure that get you found by the right people.</p>
+            <h3>{{services.seo.title}}</h3>
+            <p>{{services.seo.body}}</p>
           </article>
           <article class="card reveal d2">
             <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5.5a3 3 0 0 1 0 5M18 14.5c1.8.8 3 2.6 3 5.5"/></svg></div>
-            <h3>CRMs</h3>
-            <p>Custom or integrated CRMs that fit how your team really sells, supports and follows up.</p>
+            <h3>{{services.crm.title}}</h3>
+            <p>{{services.crm.body}}</p>
           </article>
           <article class="card reveal d1">
             <div class="icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
-            <h3>Mobile apps</h3>
-            <p>Polished iOS and Android apps, native or cross-platform, built to be used every day.</p>
+            <h3>{{services.mobile.title}}</h3>
+            <p>{{services.mobile.body}}</p>
           </article>
           <article class="card reveal d2">
             <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></div>
-            <h3>Systems</h3>
-            <p>Internal tools, integrations and back-office systems that automate the boring parts.</p>
+            <h3>{{services.systems.title}}</h3>
+            <p>{{services.systems.body}}</p>
           </article>
           <article class="card card-cta reveal d3">
-            <h3>Have something in mind?</h3>
-            <p>Tell us about it — we reply fast.</p>
-            <a class="btn btn-light" href="mailto:us@codercoaster.com?subject=Project%20inquiry">Contact us</a>
+            <h3>{{services.cta.title}}</h3>
+            <p>{{services.cta.body}}</p>
+            <a class="btn btn-light" href="mailto:us@codercoaster.com?subject={{contact.subject}}">{{contact.cta}}</a>
           </article>
         </div>
       </div>
@@ -180,31 +187,31 @@
     <!-- AI AGENTS -->
     <section class="section alt" id="ai">
       <div class="container">
-        <p class="eyebrow dark reveal">AI Agents</p>
-        <h2 data-track class="reveal d1">AI that never misses a customer.</h2>
-        <p class="section-intro reveal d2">Our AI agents answer, reply and book for you 24/7 — so no call, message or lead slips through the cracks.</p>
-        <p class="status reveal d3"><span class="pulse" aria-hidden="true"></span>Online 24/7</p>
+        <p class="eyebrow dark reveal">{{ai.eyebrow}}</p>
+        <h2 data-track class="reveal d1">{{ai.title}}</h2>
+        <p class="section-intro reveal d2">{{ai.intro}}</p>
+        <p class="status reveal d3"><span class="pulse" aria-hidden="true"></span>{{ai.status}}</p>
 
         <div class="grid grid-4">
           <article class="card reveal">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path class="sms-lines" d="M8 9h8M8 12.5h5"/></svg></div>
-            <h3>Missed calls &amp; SMS</h3>
-            <p>Every missed call gets an instant text back. Our agent replies to SMS, answers questions and captures the lead.</p>
+            <h3>{{ai.sms.title}}</h3>
+            <p>{{ai.sms.body}}</p>
           </article>
           <article class="card reveal d1">
             <div class="icon ring"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
-            <h3>AI voice receptionist</h3>
-            <p>Answers your phone live, handles common questions and routes calls to the right person.</p>
+            <h3>{{ai.voice.title}}</h3>
+            <p>{{ai.voice.body}}</p>
           </article>
           <article class="card reveal d2">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path class="dot" d="M8.5 10.5h.01"/><path class="dot" d="M12 10.5h.01"/><path class="dot" d="M15.5 10.5h.01"/></svg></div>
-            <h3>24/7 website chat</h3>
-            <p>A chat assistant on your site that answers, qualifies and converts visitors around the clock.</p>
+            <h3>{{ai.chat.title}}</h3>
+            <p>{{ai.chat.body}}</p>
           </article>
           <article class="card reveal d3">
             <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path class="check" d="M9 15l2 2 4-4"/></svg></div>
-            <h3>Appointment booking</h3>
-            <p>Books, reschedules and confirms appointments straight into your calendar.</p>
+            <h3>{{ai.booking.title}}</h3>
+            <p>{{ai.booking.body}}</p>
           </article>
         </div>
       </div>
@@ -213,8 +220,8 @@
     <!-- PROCESS -->
     <section class="section" id="process">
       <div class="container">
-        <p class="eyebrow dark reveal">How we work</p>
-        <h2 class="reveal d1">A smooth ride, start to finish.</h2>
+        <p class="eyebrow dark reveal">{{process.eyebrow}}</p>
+        <h2 class="reveal d1">{{process.title}}</h2>
         <div class="steps-wrap">
           <svg class="steps-track" aria-hidden="true"><path class="st-base"/><path class="st-fill"/></svg>
           <svg class="steps-cart" width="84" height="44" viewBox="0 0 84 44" aria-hidden="true">
@@ -226,9 +233,9 @@
             <rect x="6" y="19" width="76" height="7" fill="#6e2a7a" clip-path="url(#stepNoseClip)"/>
           </svg>
           <ol class="steps">
-            <li class="reveal"><span class="num">1</span><h3>Talk</h3><p>We listen, ask the right questions and agree on goals and scope.</p></li>
-            <li class="reveal d1"><span class="num">2</span><h3>Build</h3><p>Short iterations with visible progress, so there are no surprises.</p></li>
-            <li class="reveal d2"><span class="num">3</span><h3>Launch &amp; grow</h3><p>We ship, measure and keep improving as your needs evolve.</p></li>
+            <li class="reveal"><span class="num">1</span><h3>{{process.talk.title}}</h3><p>{{process.talk.body}}</p></li>
+            <li class="reveal d1"><span class="num">2</span><h3>{{process.build.title}}</h3><p>{{process.build.body}}</p></li>
+            <li class="reveal d2"><span class="num">3</span><h3>{{process.launch.title}}</h3><p>{{process.launch.body}}</p></li>
           </ol>
         </div>
       </div>
@@ -237,24 +244,26 @@
     <!-- FINAL CTA -->
     <section class="final">
       <div class="container reveal">
-        <h2>Ready to get on board?</h2>
-        <p>Tell us what you need and we'll get back to you within one business day.</p>
-        <a class="btn btn-light btn-big" href="mailto:us@codercoaster.com?subject=Project%20inquiry">us@codercoaster.com</a>
+        <h2>{{final.title}}</h2>
+        <p>{{final.body}}</p>
+        <a class="btn btn-light btn-big" href="mailto:us@codercoaster.com?subject={{contact.subject}}">us@codercoaster.com</a>
+        <p class="final-call">{{final.call}} <a href="tel:+16286000690">(628) 600-0690</a></p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <img src="assets/badge.png" alt="" width="32" height="32">
+    <img src="/assets/badge.png" alt="" width="32" height="32">
     <span>© <span id="year">2026</span> CoderCoaster</span>
     <div class="social">
-      <a href="https://www.linkedin.com/company/codercoaster/" target="_blank" rel="noopener noreferrer" aria-label="CoderCoaster on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.500zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5z"/></svg></a>
-      <a href="https://x.com/codercoaster" target="_blank" rel="noopener noreferrer" aria-label="CoderCoaster on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2.3h3.3l-7.2 8.3 8.5 11.2h-6.7l-5.2-6.8-6 6.8H1.600l7.700-8.800L1.200 2.300H8l4.700 6.200zm-1.200 17.500h1.800L7 4.200H5z"/></svg></a>
-      <a href="https://www.instagram.com/coder.coaster/" target="_blank" rel="noopener noreferrer" aria-label="CoderCoaster on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" class="stroke"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.300" cy="6.700" r=".4"/></svg></a>
-      <a href="mailto:us@codercoaster.com" aria-label="Email us@codercoaster.com"><svg viewBox="0 0 24 24" aria-hidden="true" class="stroke"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.500 7 8.500 6 8.500-6"/></svg></a>
+      <a href="https://www.linkedin.com/company/codercoaster/" target="_blank" rel="noopener noreferrer" aria-label="{{footer.linkedin}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.500zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5z"/></svg></a>
+      <a href="https://x.com/codercoaster" target="_blank" rel="noopener noreferrer" aria-label="{{footer.x}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2.3h3.3l-7.2 8.3 8.5 11.2h-6.7l-5.2-6.8-6 6.8H1.600l7.700-8.800L1.200 2.300H8l4.700 6.200zm-1.200 17.500h1.800L7 4.200H5z"/></svg></a>
+      <a href="https://www.instagram.com/coder.coaster/" target="_blank" rel="noopener noreferrer" aria-label="{{footer.instagram}}"><svg viewBox="0 0 24 24" aria-hidden="true" class="stroke"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.300" cy="6.700" r=".4"/></svg></a>
+      <a href="mailto:us@codercoaster.com" aria-label="{{footer.email}}"><svg viewBox="0 0 24 24" aria-hidden="true" class="stroke"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.500 7 8.500 6 8.500-6"/></svg></a>
+      <a href="tel:+16286000690" aria-label="{{footer.call}}"><svg viewBox="0 0 24 24" aria-hidden="true" class="stroke"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
