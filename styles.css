@@ -44,6 +44,7 @@ p { margin: 0; }
 .btn-light { background: #fff; color: var(--purple-700); box-shadow: 0 8px 24px -8px rgba(60, 10, 70, .45); }
 .btn-ghost { color: #fff; border: 2px solid rgba(255,255,255,.7); }
 .btn-ghost:hover { background: rgba(255,255,255,.15); }
+.btn svg { width: 1.2em; height: 1.2em; margin-right: .5em; vertical-align: -.2em; }
 .btn-small { background: var(--purple-500); color: #fff; padding: .5rem 1.1rem; font-size: .92rem; }
 .btn-small:hover { background: var(--purple-600); }
 .btn-big { font-size: 1.15rem; padding: 1rem 2.2rem; }
@@ -329,6 +330,7 @@ p { margin: 0; }
 }
 .final h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 600; }
 .final p { margin: 1rem auto 2rem; max-width: 760px; opacity: .95; }
+.final .cta-row { align-items: center; }
 .final .final-call { margin: 1.6rem auto 0; font-size: 1.05rem; opacity: .9; }
 .final-call a { color: #fff; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(255,255,255,.45); text-underline-offset: 3px; transition: text-decoration-color .2s ease; }
 .final-call a:hover, .final-call a:focus-visible { text-decoration-color: #fff; }
@@ -344,7 +346,7 @@ p { margin: 0; }
 .footer .social a { display: inline-flex; color: var(--muted); transition: color .2s ease; }
 .footer .social a:hover, .footer .social a:focus-visible { color: var(--purple-600); text-decoration: none; }
 .social svg { width: 18px; height: 18px; fill: currentColor; }
-.social svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---------- Scroll reveal ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -402,6 +404,6 @@ p { margin: 0; }
 
 @media (max-width: 640px) {
   :root { --track-h: clamp(110px, 20svh, 170px); }
-  .hero .cta-row { flex-direction: column; align-items: center; }
-  .hero .cta-row .btn { width: min(100%, 18rem); text-align: center; justify-content: center; }
+  .cta-row { flex-direction: column; align-items: center; }
+  .cta-row .btn { width: min(100%, 18rem); text-align: center; justify-content: center; }
 }

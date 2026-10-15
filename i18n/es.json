@@ -104,7 +104,8 @@
   "final": {
     "title": "¿Listo para subirte?",
     "body": "Cuéntanos qué necesitas y te respondemos en menos de un día hábil.",
-    "call": "o llámanos al"
+    "call": "o llámanos al",
+    "book": "Agenda una llamada"
   },
   "footer": {
     "linkedin": "CoderCoaster en LinkedIn",

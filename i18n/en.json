@@ -104,7 +104,8 @@
   "final": {
     "title": "Ready to get on board?",
     "body": "Tell us what you need and we'll get back to you within one business day.",
-    "call": "or call us at"
+    "call": "or call us at",
+    "book": "Book a call"
   },
   "footer": {
     "linkedin": "CoderCoaster on LinkedIn",
