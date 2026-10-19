@@ -281,14 +281,16 @@ p { margin: 0; }
 .steps {
   list-style: none; padding: 0; margin: 0;
   display: grid; gap: 2rem; grid-template-columns: repeat(3, 1fr);
+  /* Each li.reveal is its own stacking context (transform), so lift the whole
+     list above the train; otherwise .num's z-index can't beat the cart */
+  position: relative; z-index: 2;
 }
 .steps li { position: relative; padding-top: 1rem; }
 .num {
   position: relative; z-index: 2;
   transition: transform .45s cubic-bezier(.3,1.7,.5,1), box-shadow .45s;
   display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
-  background: var(--grad); color: #fff; font-family: "Pacifico", cursive; font-size: 1.4rem;
-  padding-bottom: 4px;
+  background: var(--grad); color: #fff; font-weight: 600; font-size: 1.25rem;
 }
 .steps h3 { margin: 1rem 0 .4rem; font-size: 1.25rem; }
 .steps p { color: var(--muted); }
