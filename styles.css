@@ -339,7 +339,7 @@ p { margin: 0; }
 .final p { margin: 1rem auto 2rem; max-width: 760px; opacity: .95; }
 .final .cta-row { align-items: center; }
 .final .final-call { margin: 1.6rem auto 0; font-size: 1.05rem; opacity: .9; }
-.final-call a { color: #fff; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(255,255,255,.45); text-underline-offset: 3px; transition: text-decoration-color .2s ease; }
+.final-call a { color: #fff; font-weight: 600; white-space: nowrap; text-decoration: underline; text-decoration-color: rgba(255,255,255,.45); text-underline-offset: 3px; transition: text-decoration-color .2s ease; }
 .final-call a:hover, .final-call a:focus-visible { text-decoration-color: #fff; }
 
 /* ---------- Footer ---------- */
