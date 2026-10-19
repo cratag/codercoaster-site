@@ -134,11 +134,21 @@ document.querySelector('.brand').addEventListener('click', (e) => {
   };
   narrow.addEventListener('change', applyShape);
 
-  // Point at distance s (px) along the track; extends in a straight line past the ends
+  // Unit direction of the track between samples i and j
+  const dir = (i, j) => {
+    const dx = pts[j].x - pts[i].x, dy = pts[j].y - pts[i].y, d = Math.hypot(dx, dy) || 1;
+    return { x: dx / d, y: dy / d };
+  };
+
+  // Point at distance s (px) along the track; past the ends it keeps going
+  // straight along the track's own slope so the train never levels off
   const at = (s) => {
     const L = cum[SAMPLES];
-    if (s <= 0) return { x: pts[0].x + s, y: pts[0].y };
-    if (s >= L) return { x: pts[SAMPLES].x + (s - L), y: pts[SAMPLES].y };
+    if (s <= 0) { const d = dir(0, 1); return { x: pts[0].x + d.x * s, y: pts[0].y + d.y * s }; }
+    if (s >= L) {
+      const d = dir(SAMPLES - 1, SAMPLES);
+      return { x: pts[SAMPLES].x + d.x * (s - L), y: pts[SAMPLES].y + d.y * (s - L) };
+    }
     let lo = 0, hi = SAMPLES;
     while (hi - lo > 1) { const m = (lo + hi) >> 1; (cum[m] <= s ? lo = m : hi = m); }
     const f = (s - cum[lo]) / (cum[hi] - cum[lo]);
