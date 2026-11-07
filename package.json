@@ -1,0 +1,9 @@
+{
+  "name": "codercoaster-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "yarn build && exec python3 -m http.server 8000 --directory _site"
+  }
+}

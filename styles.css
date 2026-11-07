@@ -79,6 +79,26 @@ p { margin: 0; }
   color: #fff; text-decoration: none; font-weight: 500; font-size: .95rem; transition: color .3s;
 }
 .nav.scrolled nav a:not(.btn) { color: var(--ink); }
+/* Section links sweep left to right on hover: an underline grows and the text fills with
+   --hl (a two-tone gradient twice the link's width, clipped to the text, slides to its tinted
+   half). Over the purple hero --hl is white, so only the underline shows; on the white bar
+   it's the primary purple */
+.nav nav a:not(.btn):not(.lang) {
+  --hl: #fff;
+  position: relative;
+  background: linear-gradient(90deg, var(--hl) 50%, currentColor 50%) right / 200% 100% no-repeat;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  transition: color .3s, background-position .25s ease-out;
+}
+.nav.scrolled nav a:not(.btn):not(.lang) { --hl: var(--purple-600); }
+.nav nav a:not(.btn):not(.lang)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; border-radius: 2px;
+  background: var(--hl); transform: scaleX(0); transform-origin: left; transition: transform .25s ease-out;
+}
+.nav nav a:not(.btn):not(.lang):hover,
+.nav nav a:not(.btn):not(.lang):focus-visible { background-position: left; }
+.nav nav a:not(.btn):not(.lang):hover::after,
+.nav nav a:not(.btn):not(.lang):focus-visible::after { transform: scaleX(1); }
 .nav:not(.scrolled) .btn-small { background: #fff; color: var(--purple-700); }
 .nav nav a.lang {
   font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
