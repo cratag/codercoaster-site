@@ -355,7 +355,7 @@ p { margin: 0; }
 /* One card per category, full width: mockup on the left, text on the right
    (stacked on small screens). Only one is ever visible, so they all share a
    view-transition name and the swap morphs from one to the next */
-.work-grid { margin-top: 2rem; --mock-h: 340px; }
+.work-grid { margin-top: 2rem; --mock-h: 340px; touch-action: pan-y; }
 .work-card {
   display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: center;
   gap: clamp(1.5rem, 4vw, 3.5rem); padding: 1.1rem clamp(1.1rem, 3vw, 2.5rem) 1.1rem 1.1rem;
@@ -792,4 +792,44 @@ svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap
   :root { --track-h: clamp(110px, 20svh, 170px); }
   .cta-row { flex-direction: column; align-items: center; }
   .cta-row .btn { width: min(100%, 18rem); text-align: center; justify-content: center; }
+}
+
+/* ---------- Partners marquee ---------- */
+.partners { padding: clamp(3rem, 7vw, 4.5rem) 0; text-align: center; }
+.partners .eyebrow { margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.marquee {
+  --gap: clamp(2.5rem, 6vw, 4.5rem);
+  display: flex; overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+/* Each copy carries its trailing gap, so sliding by exactly one copy loops seamlessly */
+.marquee-list {
+  display: flex; align-items: center; gap: var(--gap); flex-shrink: 0;
+  padding: 0 var(--gap) 0 0; margin: 0; list-style: none;
+  animation: marquee 40s linear infinite;
+}
+.marquee-list img { display: block; height: var(--h); width: auto; }
+/* Logos are single-ink silhouettes: script.js turns each one into a mask (--logo) so it
+   paints in the theme's lavender and lights up with the brand gradient on hover.
+   The <img> stays (invisible) for its size and alt text */
+.marquee-list li[style*="--logo"] {
+  position: relative;
+  background: var(--purple-300);
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+}
+/* Gradients can't be transitioned, so the lit state is a gradient layer that fades in/out */
+.marquee-list li[style*="--logo"]::after {
+  content: ""; position: absolute; inset: 0;
+  background: var(--grad); opacity: 0; transition: opacity .45s ease;
+}
+/* Never pauses. Desktop: lit while hovered. Touch: a tap lights it until the next tap (script.js) */
+@media (hover: hover) { .marquee-list li[style*="--logo"]:hover::after { opacity: 1; } }
+.marquee-list li[style*="--logo"].on::after { opacity: 1; }
+.marquee-list li[style*="--logo"] img { opacity: 0; }
+@keyframes marquee { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { mask-image: none; justify-content: center; }
+  .marquee-list { animation: none; flex-wrap: wrap; justify-content: center; flex-shrink: 1; padding: 0 1rem; row-gap: 1.5rem; }
+  .marquee-list[aria-hidden] { display: none; }
 }

@@ -12,6 +12,25 @@ document.querySelectorAll('[data-x]').forEach((el) => {
   }
 });
 
+// Partners marquee: a hidden second copy of the logo list fills the gap as the
+// first one slides out, so the loop never shows a seam
+document.querySelectorAll('.marquee-list').forEach((list) => {
+  list.querySelectorAll('img').forEach((img) => {
+    img.parentElement.style.setProperty('--logo', `url("${img.getAttribute('src')}")`);
+  });
+  const copy = list.cloneNode(true);
+  copy.setAttribute('aria-hidden', 'true');
+  copy.querySelectorAll('img').forEach((img) => { img.alt = ''; });
+  list.after(copy);
+});
+// Touch has no hover: a tapped logo stays lit until the next tap anywhere
+document.addEventListener('pointerdown', (e) => {
+  if (e.pointerType === 'mouse') return;
+  const li = e.target.closest('.marquee-list li');
+  document.querySelectorAll('.marquee-list li.on').forEach((el) => el !== li && el.classList.remove('on'));
+  li?.classList.add('on');
+});
+
 // Little coaster track under headings marked data-track: two rails from one
 // curve (the second one shifted down) plus a glint that rides on top
 const MINI_TRACK = 'M2,16 C30,16 45,5 78,5 C108,5 122,14 158,9';
@@ -147,10 +166,20 @@ if (!REDUCED && matchMedia('(hover: hover) and (pointer: fine)').matches) {
   pill.addEventListener('animationend', (e) => {
     if (e.animationName === 'wf-tick' && bar.classList.contains('auto')) show((current + 1) % tabs.length);
   });
-  tabs.forEach((t, i) => t.addEventListener('click', () => {
+  // Picking a category by hand (tab or swipe) stops the auto-rotation
+  const pick = (i) => {
     bar.classList.remove('auto');
-    show(i);
-  }));
+    show((i + tabs.length) % tabs.length);
+  };
+  tabs.forEach((t, i) => t.addEventListener('click', () => pick(i)));
+  // Touch: a mostly-horizontal swipe on the card goes to the next/previous category
+  let sx = 0, sy = 0;
+  grid.addEventListener('touchstart', (e) => ({ clientX: sx, clientY: sy } = e.touches[0]), { passive: true });
+  grid.addEventListener('touchend', (e) => {
+    const { clientX, clientY } = e.changedTouches[0];
+    const dx = clientX - sx, dy = clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) pick(current + (dx < 0 ? 1 : -1));
+  }, { passive: true });
   new ResizeObserver(place).observe(bar);
   show(0, false);
 })();
