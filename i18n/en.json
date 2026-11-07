@@ -28,7 +28,8 @@
     "home": "CoderCoaster home",
     "services": "Services",
     "ai": "AI Agents",
-    "process": "Process"
+    "process": "Process",
+    "work": "Work"
   },
   "hero": {
     "eyebrow": "Software solutions",
@@ -100,6 +101,46 @@
     "launch": {
       "title": "Launch &amp; grow",
       "body": "We ship, measure and keep improving as your needs evolve."
+    }
+  },
+  "work": {
+    "eyebrow": "Our work",
+    "title": "Built for real businesses.",
+    "intro": "A glimpse of what we ship.",
+    "filtersLabel": "Filter projects by type",
+    "filters": {
+      "web": "Websites",
+      "store": "Online stores",
+      "crm": "CRMs",
+      "mobile": "Mobile apps",
+      "ai": "AI agents",
+      "systems": "Systems"
+    },
+    "items": {
+      "landing": {
+        "title": "Landing pages",
+        "body": "Landing pages and websites that turn visits into customers — from personal brands to full catalogs."
+      },
+      "store": {
+        "title": "Web stores",
+        "body": "Catalog, deals, cart and checkout — ready to sell from day one."
+      },
+      "crm": {
+        "title": "Sales CRM",
+        "body": "Pipeline, contacts, follow-ups and metrics in one place, shaped around how your team sells."
+      },
+      "mobile": {
+        "title": "Mobile apps",
+        "body": "Native or cross-platform apps for iOS and Android — bookings, loyalty, tracking and more."
+      },
+      "ai": {
+        "title": "AI agents",
+        "body": "Agents that answer your phone, reply to chats and texts, and book appointments — 24/7, without missing a customer."
+      },
+      "systems": {
+        "title": "Systems & more",
+        "body": "Dashboards, inventory, integrations and internal tools — whatever your operation needs."
+      }
     }
   },
   "final": {

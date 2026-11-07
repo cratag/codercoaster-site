@@ -1,5 +1,17 @@
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// Work mockups: data-x="n" repeats an element n times; each copy gets --i
+// (its index) for staggered animations
+document.querySelectorAll('[data-x]').forEach((el) => {
+  const n = +el.dataset.x;
+  el.removeAttribute('data-x');
+  for (let i = n - 1; i > 0; i--) {
+    const c = el.cloneNode(true);
+    c.style.setProperty('--i', i);
+    el.after(c);
+  }
+});
+
 // Little coaster track under headings marked data-track: two rails from one
 // curve (the second one shifted down) plus a glint that rides on top
 const MINI_TRACK = 'M2,16 C30,16 45,5 78,5 C108,5 122,14 158,9';
@@ -72,6 +84,76 @@ if (!REDUCED && matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
   });
 }
+
+// Work: one category at a time. The tabs rotate on their own (the progress
+// animation on the active tab is the clock, so hover and off-screen pausing come
+// free from CSS); clicking a tab stays on it. Cards morph via View Transitions.
+// Nothing moves (mockups scrolling, countdown) until the card is fully on screen
+// and has finished appearing: that's when the section gets .live
+(() => {
+  const bar = document.querySelector('.work-filters');
+  if (!bar) return;
+  const pill = bar.querySelector('.wf-pill');
+  const tabs = [...bar.querySelectorAll('button')];
+  const cards = [...document.querySelectorAll('.work-card')];
+  const grid = cards[0].parentElement, section = bar.closest('section');
+  let current = 0, onScreen = false, settling = !REDUCED;
+
+  const update = () => section.classList.toggle('live', onScreen && !settling);
+  // "Fully on screen": 90% of the card, or of the viewport if the card is taller
+  new IntersectionObserver(([e]) => {
+    onScreen = e.intersectionRect.height >= Math.min(e.boundingClientRect.height, innerHeight) * 0.9;
+    update();
+  }, { threshold: [0, 0.25, 0.5, 0.75, 0.9, 1] }).observe(grid);
+  // First entrance: done when the card's fade-in ends
+  grid.addEventListener('transitionend', (e) => {
+    if (e.target === cards.find((c) => !c.hidden) && e.propertyName === 'opacity') { settling = false; update(); }
+  });
+
+  const place = () => {
+    const t = tabs[current];
+    pill.style.width = `${t.offsetWidth}px`;
+    pill.style.transform = `translateX(${t.offsetLeft}px)`;
+  };
+  // Restart the progress bar (reflow so the same animation plays again)
+  const tick = () => {
+    pill.classList.remove('tick');
+    void pill.offsetWidth;
+    pill.classList.add('tick');
+  };
+
+  const show = (i, animate = true) => {
+    current = i;
+    const t = tabs[i], kind = t.dataset.filter;
+    tabs.forEach((b) => b.setAttribute('aria-pressed', String(b === t)));
+    place();
+    bar.scrollTo({ left: t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
+    const run = () => cards.forEach((c) => {
+      c.hidden = c.dataset.kind !== kind;
+      if (!c.hidden && bar.classList.contains('in')) reveal(c);
+    });
+    if (bar.classList.contains('auto')) tick();
+    if (!animate) return run();
+    // Switching: wait until the new card has fully morphed in
+    settling = !REDUCED;
+    update();
+    const done = () => { settling = false; update(); };
+    if (document.startViewTransition && !REDUCED) document.startViewTransition(run).finished.then(done, done);
+    else { run(); done(); }
+  };
+
+  // No auto-rotation for people who asked for less motion
+  if (!REDUCED) bar.classList.add('auto');
+  pill.addEventListener('animationend', (e) => {
+    if (e.animationName === 'wf-tick' && bar.classList.contains('auto')) show((current + 1) % tabs.length);
+  });
+  tabs.forEach((t, i) => t.addEventListener('click', () => {
+    bar.classList.remove('auto');
+    show(i);
+  }));
+  new ResizeObserver(place).observe(bar);
+  show(0, false);
+})();
 
 // Nav background once scrolled
 const nav = document.getElementById('nav');

@@ -158,6 +158,7 @@
         <a href="#services">{{nav.services}}</a>
         <a href="#ai">{{nav.ai}}</a>
         <a href="#process">{{nav.process}}</a>
+        <a href="#work">{{nav.work}}</a>
         <a
           class="lang"
           href="{{alt.path}}"
@@ -452,6 +453,207 @@
                 <p>{{process.launch.body}}</p>
               </li>
             </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK: generic mockups (no client names), one category at a time. data-x="n" repeats an
+           element n times (script.js); .m-num boxes number themselves (CSS) -->
+      <section class="section alt" id="work">
+        <div class="container">
+          <p class="eyebrow dark reveal">{{work.eyebrow}}</p>
+          <h2 data-track class="reveal d1">{{work.title}}</h2>
+          <p class="section-intro reveal d2">{{work.intro}}</p>
+
+          <div class="work-filters reveal d3" role="group" aria-label="{{work.filtersLabel}}">
+            <span class="wf-pill" aria-hidden="true"></span>
+            <button type="button" data-filter="web" aria-pressed="true">{{work.filters.web}}</button>
+            <button type="button" data-filter="store" aria-pressed="false">{{work.filters.store}}</button>
+            <button type="button" data-filter="crm" aria-pressed="false">{{work.filters.crm}}</button>
+            <button type="button" data-filter="mobile" aria-pressed="false">{{work.filters.mobile}}</button>
+            <button type="button" data-filter="ai" aria-pressed="false">{{work.filters.ai}}</button>
+            <button type="button" data-filter="systems" aria-pressed="false">{{work.filters.systems}}</button>
+          </div>
+
+          <div class="work-grid">
+            <article class="card work-card reveal" data-kind="web">
+              <div class="mock-duo" aria-hidden="true">
+                <div class="mock">
+                  <div class="screen ui"><div class="page">
+                    <div class="row sb"><i class="logo"></i><i class="mnav"></i></div>
+                    <div class="img m-hero on-img" style="--h:104px">
+                      <i class="l t" style="--w:72%"></i>
+                      <i class="l t" style="--w:48%"></i>
+                      <i class="l" style="--w:58%"></i>
+                      <i class="btn-m"></i>
+                    </div>
+                    <div class="cols"><div class="box m-num" data-x="3"><i class="l"></i><i class="l" style="--w:70%"></i></div></div>
+                    <div class="cols" style="--n:2"><i class="img" style="--h:58px"></i><i class="img" style="--h:58px"></i></div>
+                    <div class="cols" style="--n:4"><i class="img sq" data-x="4"></i></div>
+                    <i class="btn-m wide"></i>
+                  </div></div>
+                </div>
+                <div class="mock">
+                  <div class="screen ui"><div class="page">
+                    <div class="row sb"><i class="mnav short"></i><i class="logo"></i><i class="mnav short"></i></div>
+                    <div class="stack center hero-text"><i class="l t" style="--w:46%"></i><i class="orn"></i><i class="l" style="--w:62%"></i></div>
+                    <div class="mosaic"><i class="img" data-x="5"></i></div>
+                    <i class="l t" style="--w:34%"></i>
+                    <div class="cols" style="--n:4"><i class="prod" data-x="4"></i></div>
+                    <div class="box center"><i class="l" style="--w:50%"></i><i class="btn-m"></i></div>
+                  </div></div>
+                </div>
+                <div class="phone"><div class="ui ps scroll"><div class="page">
+                  <div class="row sb"><i class="logo"></i><i class="burger"></i></div>
+                  <div class="img m-hero on-img" style="--h:84px">
+                    <i class="l t" style="--w:85%"></i>
+                    <i class="l t" style="--w:60%"></i>
+                    <i class="btn-m" style="--w:44px"></i>
+                  </div>
+                  <div class="cols" style="--n:1"><div class="box m-num" data-x="3"><i class="l"></i></div></div>
+                  <i class="img" style="--h:56px"></i>
+                  <div class="cols" style="--n:2"><i class="img sq" data-x="4"></i></div>
+                  <i class="btn-m wide"></i>
+                </div></div></div>
+              </div>
+              <div class="work-info">
+                <span class="work-tag">{{work.filters.web}}</span>
+                <h3>{{work.items.landing.title}}</h3>
+                <p>{{work.items.landing.body}}</p>
+              </div>
+            </article>
+
+            <article class="card work-card reveal" data-kind="crm">
+              <div class="mock" aria-hidden="true">
+                <div class="screen ui app">
+                  <div class="side"><i class="side-logo"></i><i class="side-i" data-x="5"></i></div>
+                  <div class="main">
+                    <div class="row sb"><i class="l t" style="--w:22%"></i><i class="search"></i><i class="avatar"></i></div>
+                    <div class="cols" style="--n:4">
+                      <div class="box kpi"><i class="l" style="--w:60%"></i><b>128</b></div>
+                      <div class="box kpi"><i class="l" style="--w:45%"></i><b>$48k</b></div>
+                      <div class="box kpi"><i class="l" style="--w:70%"></i><b>32%</b></div>
+                      <div class="box kpi"><i class="l" style="--w:40%"></i><b>4.9★</b></div>
+                    </div>
+                    <div class="cols kanban" style="--n:4">
+                      <div class="kcol"><i class="l t" style="--w:45%"></i><i class="kcard" data-x="3"></i></div>
+                      <div class="kcol"><i class="l t" style="--w:60%"></i><i class="kcard" data-x="2"></i></div>
+                      <div class="kcol"><i class="l t" style="--w:50%"></i><i class="kcard" data-x="2"></i></div>
+                      <div class="kcol"><i class="l t" style="--w:35%"></i><i class="kcard"></i><i class="kcard arrive"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-info">
+                <span class="work-tag">{{work.filters.crm}}</span>
+                <h3>{{work.items.crm.title}}</h3>
+                <p>{{work.items.crm.body}}</p>
+              </div>
+            </article>
+
+            <article class="card work-card reveal" data-kind="mobile">
+              <div class="mock stage" aria-hidden="true">
+                <span class="os ios"><svg viewBox="0 0 24 24"><path d="M12.15 6.9c-.95 0-2.42-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.2 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.03-3.04 2.48-4.49 2.6-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.68 1.09-4.61 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.27 3.71 1.34.1 2.71-.69 3.56-1.7" /></svg>iOS</span>
+                <span class="os android"><svg viewBox="0 0 24 24"><path class="ant" d="M8.4 10.4 6.6 7.4M15.6 10.4l1.8-3" /><path d="M4.5 17a7.5 7.5 0 0 1 15 0z" /><circle class="eye" cx="9.3" cy="13.6" r="1" /><circle class="eye" cx="14.7" cy="13.6" r="1" /></svg>Android</span>
+                <div class="phone"><div class="ui ps">
+                  <div class="app-head"><i class="l t" style="--w:62%"></i><i class="l" style="--w:40%"></i></div>
+                  <div class="box"><i class="l" style="--w:50%"></i><i class="prog"></i></div>
+                  <i class="lrow" data-x="3"></i>
+                  <i class="tabbar"></i>
+                </div></div>
+                <div class="phone"><div class="ui ps">
+                  <i class="l t" style="--w:55%"></i>
+                  <div class="cal"><i data-x="28"></i></div>
+                  <div class="cols"><i class="chip" data-x="3"></i></div>
+                  <i class="btn-m wide"></i>
+                </div></div>
+              </div>
+              <div class="work-info">
+                <span class="work-tag">{{work.filters.mobile}}</span>
+                <h3>{{work.items.mobile.title}}</h3>
+                <p>{{work.items.mobile.body}}</p>
+              </div>
+            </article>
+
+            <article class="card work-card reveal" data-kind="store">
+              <div class="mock" aria-hidden="true">
+                <div class="screen ui"><div class="page">
+                  <i class="topbar"></i>
+                  <div class="row"><i class="logo"></i><i class="search"></i><i class="cart-i"></i></div>
+                  <div class="cols" style="--n:5"><i class="chip" data-x="5"></i></div>
+                  <div class="img m-hero on-img" style="--h:64px"><i class="l t" style="--w:45%"></i><i class="l" style="--w:30%"></i></div>
+                  <div class="cols"><i class="prod deal" data-x="6"></i></div>
+                  <div class="cols" style="--n:2"><i class="img" style="--h:40px" data-x="2"></i></div>
+                </div><i class="toast">✓</i></div>
+              </div>
+              <div class="work-info">
+                <span class="work-tag">{{work.filters.store}}</span>
+                <h3>{{work.items.store.title}}</h3>
+                <p>{{work.items.store.body}}</p>
+              </div>
+            </article>
+
+            <article class="card work-card reveal" data-kind="ai">
+              <div class="mock stage ai" aria-hidden="true">
+                <div class="ui ai-card">
+                  <i class="avatar ring"></i>
+                  <i class="l t" style="--w:70%"></i>
+                  <i class="l" style="--w:45%"></i>
+                  <div class="wave"><i data-x="9"></i></div>
+                </div>
+                <div class="ui ai-card chat">
+                  <div class="row"><i class="avatar"></i><i class="l t" style="--w:45%"></i><span class="pulse"></span></div>
+                  <i class="bubble" style="--w:72%"></i>
+                  <i class="bubble out" style="--w:55%"></i>
+                  <i class="bubble" style="--w:82%"></i>
+                  <i class="bubble out typing"></i>
+                </div>
+                <div class="ui ai-card">
+                  <i class="l t" style="--w:60%"></i>
+                  <div class="cal"><i data-x="21"></i></div>
+                  <i class="confirm">✓</i>
+                </div>
+              </div>
+              <div class="work-info">
+                <span class="work-tag">{{work.filters.ai}}</span>
+                <h3>{{work.items.ai.title}}</h3>
+                <p>{{work.items.ai.body}}</p>
+              </div>
+            </article>
+
+            <article class="card work-card reveal" data-kind="systems">
+              <div class="mock" aria-hidden="true">
+                <div class="screen ui app">
+                  <div class="main">
+                    <div class="row sb"><i class="l t" style="--w:24%"></i><div class="row"><span class="pulse"></span><i class="l" style="--w:44px"></i></div></div>
+                    <div class="sys-grid">
+                      <div class="box chart">
+                        <i class="bar" style="--h:42%;--i:0"></i><i class="bar" style="--h:58%;--i:1"></i>
+                        <i class="bar" style="--h:50%;--i:2"></i><i class="bar" style="--h:72%;--i:3"></i>
+                        <i class="bar" style="--h:64%;--i:4"></i><i class="bar" style="--h:86%;--i:5"></i>
+                        <i class="bar" style="--h:70%;--i:6"></i><i class="bar" style="--h:92%;--i:7"></i>
+                        <i class="bar" style="--h:78%;--i:8"></i><i class="bar" style="--h:96%;--i:9"></i>
+                        <i class="bar" style="--h:84%;--i:10"></i><i class="bar" style="--h:100%;--i:11"></i>
+                      </div>
+                      <div class="box donut-box">
+                        <svg class="donut" viewBox="0 0 36 36">
+                          <circle cx="18" cy="18" r="15.9" />
+                          <circle class="val" cx="18" cy="18" r="15.9" pathLength="100" transform="rotate(-90 18 18)" />
+                          <text x="18" y="20.6">72%</text>
+                        </svg>
+                        <i class="l" style="--w:70%"></i>
+                      </div>
+                      <div class="box table"><i class="trow" data-x="3"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-info">
+                <span class="work-tag">{{work.filters.systems}}</span>
+                <h3>{{work.items.systems.title}}</h3>
+                <p>{{work.items.systems.body}}</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>

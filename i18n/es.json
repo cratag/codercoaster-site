@@ -28,7 +28,8 @@
     "home": "Inicio de CoderCoaster",
     "services": "Servicios",
     "ai": "Agentes de IA",
-    "process": "Proceso"
+    "process": "Proceso",
+    "work": "Trabajos"
   },
   "hero": {
     "eyebrow": "Soluciones de software",
@@ -100,6 +101,46 @@
     "launch": {
       "title": "Lanzamos y crecemos",
       "body": "Publicamos, medimos y seguimos mejorando a medida que evolucionan tus necesidades."
+    }
+  },
+  "work": {
+    "eyebrow": "Nuestro trabajo",
+    "title": "Hecho para negocios reales.",
+    "intro": "Un vistazo a lo que lanzamos.",
+    "filtersLabel": "Filtrar proyectos por tipo",
+    "filters": {
+      "web": "Sitios web",
+      "store": "Tiendas online",
+      "crm": "CRMs",
+      "mobile": "Apps móviles",
+      "ai": "Agentes de IA",
+      "systems": "Sistemas"
+    },
+    "items": {
+      "landing": {
+        "title": "Landing pages",
+        "body": "Landing pages y sitios que convierten visitas en clientes — desde marcas personales hasta catálogos completos."
+      },
+      "store": {
+        "title": "Tiendas online",
+        "body": "Catálogo, ofertas, carrito y checkout — listas para vender desde el primer día."
+      },
+      "crm": {
+        "title": "CRM de ventas",
+        "body": "Pipeline, contactos, seguimientos y métricas en un solo lugar, pensado para cómo vende tu equipo."
+      },
+      "mobile": {
+        "title": "Apps móviles",
+        "body": "Apps nativas o multiplataforma para iOS y Android — reservas, fidelización, seguimiento y más."
+      },
+      "ai": {
+        "title": "Agentes de IA",
+        "body": "Agentes que atienden tu teléfono, responden chats y mensajes, y agendan citas — 24/7, sin perder ningún cliente."
+      },
+      "systems": {
+        "title": "Sistemas y más",
+        "body": "Dashboards, inventario, integraciones y herramientas internas — lo que tu operación necesite."
+      }
     }
   },
   "final": {
