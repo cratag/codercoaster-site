@@ -42,23 +42,28 @@
     "title": "Everything you need to ship and grow.",
     "web": {
       "title": "Web",
-      "body": "Fast, accessible, beautiful websites and web apps — from landing pages to full platforms."
+      "body": "Fast, accessible, beautiful websites and web apps — from landing pages to full platforms.",
+      "short": "Fast, accessible, beautiful websites and web apps."
     },
     "seo": {
       "title": "SEO improvements",
-      "body": "Technical audits, performance and content structure that get you found by the right people."
+      "body": "Technical audits, performance and content structure that get you found by the right people.",
+      "short": "Technical audits and content that get you found."
     },
     "crm": {
       "title": "CRMs",
-      "body": "Custom or integrated CRMs that fit how your team really sells, supports and follows up."
+      "body": "Custom or integrated CRMs that fit how your team really sells, supports and follows up.",
+      "short": "CRMs that keep up with what your team really needs."
     },
     "mobile": {
       "title": "Mobile apps",
-      "body": "Polished iOS and Android apps, native or cross-platform, built to be used every day."
+      "body": "Polished iOS and Android apps, native or cross-platform, built to be used every day.",
+      "short": "Polished iOS and Android apps, native or cross-platform."
     },
     "systems": {
       "title": "Systems",
-      "body": "Internal tools, integrations and back-office systems that automate the boring parts."
+      "body": "Internal tools, integrations and back-office systems that automate the boring parts.",
+      "short": "Internal process automation, integrations and back office."
     },
     "cta": {
       "title": "Have something in mind?",

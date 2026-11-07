@@ -272,7 +272,7 @@
                 </svg>
               </div>
               <h3>{{services.web.title}}</h3>
-              <p>{{services.web.body}}</p>
+              <p><span class="long">{{services.web.body}}</span><span class="short">{{services.web.short}}</span></p>
             </article>
             <article class="card reveal d1">
               <div class="icon">
@@ -283,7 +283,7 @@
                 </svg>
               </div>
               <h3>{{services.seo.title}}</h3>
-              <p>{{services.seo.body}}</p>
+              <p><span class="long">{{services.seo.body}}</span><span class="short">{{services.seo.short}}</span></p>
             </article>
             <article class="card reveal d2">
               <div class="icon">
@@ -295,7 +295,7 @@
                 </svg>
               </div>
               <h3>{{services.crm.title}}</h3>
-              <p>{{services.crm.body}}</p>
+              <p><span class="long">{{services.crm.body}}</span><span class="short">{{services.crm.short}}</span></p>
             </article>
             <article class="card reveal d1">
               <div class="icon">
@@ -305,7 +305,7 @@
                 </svg>
               </div>
               <h3>{{services.mobile.title}}</h3>
-              <p>{{services.mobile.body}}</p>
+              <p><span class="long">{{services.mobile.body}}</span><span class="short">{{services.mobile.short}}</span></p>
             </article>
             <article class="card reveal d2">
               <div class="icon">
@@ -317,7 +317,7 @@
                 </svg>
               </div>
               <h3>{{services.systems.title}}</h3>
-              <p>{{services.systems.body}}</p>
+              <p><span class="long">{{services.systems.body}}</span><span class="short">{{services.systems.short}}</span></p>
             </article>
             <article class="card card-cta reveal d3">
               <h3>{{services.cta.title}}</h3>
@@ -659,7 +659,8 @@
       </section>
 
       <!-- PARTNERS: logos listed once; script.js clones the list so the marquee loops seamlessly.
-           --h sizes each logo optically (wide wordmarks shorter, compact marks taller) -->
+           --h sizes each logo optically (wide wordmarks shorter, compact marks taller).
+           Order alternates shapes (wide / round / stacked / compact) so no two alike sit together -->
       <section class="partners" aria-labelledby="partners-title">
         <div class="container">
           <p class="eyebrow dark reveal" id="partners-title">{{partners.title}}</p>
@@ -667,17 +668,19 @@
         <div class="marquee reveal d1">
           <ul class="marquee-list">
             <li><img src="/assets/partners/trocar.webp" alt="Trocar" style="--h:72px" loading="lazy" /></li>
-            <li><img src="/assets/partners/magister.webp" alt="Magíster" style="--h:62px" loading="lazy" /></li>
-            <li><img src="/assets/partners/martrainer.webp" alt="Mar Trainer" style="--h:62px" loading="lazy" /></li>
-            <li><img src="/assets/partners/hotdog.webp" alt="Hot Dog Parade" style="--h:55px" loading="lazy" /></li>
-            <li><img src="/assets/partners/zar.webp" alt="Zar" style="--h:55px" loading="lazy" /></li>
-            <li><img src="/assets/partners/multicobertura.webp" alt="Multicobertura" style="--h:55px" loading="lazy" /></li>
-            <li><img src="/assets/partners/qevo.webp" alt="Qevo" style="--h:55px" loading="lazy" /></li>
-            <li><img src="/assets/partners/laboutique.webp" alt="La Boutique" style="--h:55px" loading="lazy" /></li>
-            <li><img src="/assets/partners/crispr.webp" alt="Crispr" style="--h:53px" loading="lazy" /></li>
-            <li><img src="/assets/partners/lucasfaner.webp" alt="Lucas Faner" style="--h:43px" loading="lazy" /></li>
-            <li><img src="/assets/partners/azumi.webp" alt="Azumi" style="--h:48px" loading="lazy" /></li>
             <li><img src="/assets/partners/cratag.webp" alt="Cratag" style="--h:43px" loading="lazy" /></li>
+            <li><img src="/assets/partners/zar.webp" alt="Zar" style="--h:55px" loading="lazy" /></li>
+            <li><img src="/assets/partners/crispr.webp" alt="Crispr" style="--h:53px" loading="lazy" /></li>
+            <li><img src="/assets/partners/ruggma.webp" alt="Ruggma Propiedades" style="--h:42px" loading="lazy" /></li>
+            <li><img src="/assets/partners/magister.webp" alt="Magíster" style="--h:62px" loading="lazy" /></li>
+            <li><img src="/assets/partners/azumi.webp" alt="Azumi" style="--h:48px" loading="lazy" /></li>
+            <li><img src="/assets/partners/greeno.webp" alt="greenO" style="--h:44px" loading="lazy" /></li>
+            <li><img src="/assets/partners/laboutique.webp" alt="La Boutique" style="--h:55px" loading="lazy" /></li>
+            <li><img src="/assets/partners/qevo.webp" alt="Qevo" style="--h:55px" loading="lazy" /></li>
+            <li><img src="/assets/partners/hotdog.webp" alt="Hot Dog Parade" style="--h:55px" loading="lazy" /></li>
+            <li><img src="/assets/partners/multicobertura.webp" alt="Multicobertura" style="--h:55px" loading="lazy" /></li>
+            <li><img src="/assets/partners/lucasfaner.webp" alt="Lucas Faner" style="--h:43px" loading="lazy" /></li>
+            <li><img src="/assets/partners/martrainer.webp" alt="Mar Trainer" style="--h:54px" loading="lazy" /></li>
           </ul>
         </div>
       </section>

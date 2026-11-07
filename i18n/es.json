@@ -42,23 +42,28 @@
     "title": "Todo lo que necesitas para lanzar y crecer.",
     "web": {
       "title": "Web",
-      "body": "Sitios y aplicaciones web rápidos, accesibles y atractivos — desde landing pages hasta plataformas completas."
+      "body": "Sitios y aplicaciones web rápidos, accesibles y atractivos — desde landing pages hasta plataformas completas.",
+      "short": "Sitios y aplicaciones web rápidos, accesibles y atractivos."
     },
     "seo": {
       "title": "Mejoras de SEO",
-      "body": "Auditorías técnicas, rendimiento y estructura de contenido para que te encuentren las personas indicadas."
+      "body": "Auditorías técnicas, rendimiento y estructura de contenido para que te encuentren las personas indicadas.",
+      "short": "Auditorías técnicas y contenido para que te encuentren."
     },
     "crm": {
       "title": "CRMs",
-      "body": "CRMs a medida o integrados que se adaptan a cómo tu equipo realmente vende, atiende y da seguimiento."
+      "body": "CRMs a medida o integrados que se adaptan a cómo tu equipo realmente vende, atiende y da seguimiento.",
+      "short": "CRMs que dan seguimiento real a lo que tu equipo necesita."
     },
     "mobile": {
       "title": "Apps móviles",
-      "body": "Apps pulidas para iOS y Android, nativas o multiplataforma, hechas para usarse todos los días."
+      "body": "Apps pulidas para iOS y Android, nativas o multiplataforma, hechas para usarse todos los días.",
+      "short": "Apps pulidas para iOS y Android, nativas o multiplataforma."
     },
     "systems": {
       "title": "Sistemas",
-      "body": "Herramientas internas, integraciones y sistemas de back-office que automatizan lo tedioso."
+      "body": "Herramientas internas, integraciones y sistemas de back-office que automatizan lo tedioso.",
+      "short": "Automatización de procesos internos, integraciones y back office."
     },
     "cta": {
       "title": "¿Tienes algo en mente?",
